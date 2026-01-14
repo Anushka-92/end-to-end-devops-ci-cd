@@ -1,0 +1,8 @@
+- hosts: dockerhost
+  become: true
+
+  tasks:
+    - name: Build Docker image
+      command: docker build -t regapp:latest .
+      args:
+        chdir: /opt/docker
